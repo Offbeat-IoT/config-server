@@ -1,4 +1,4 @@
-def sharedPipelinesVersion = env.SHARED_JENKINS_PIPELINES_VERSION ?: 'main'
+def sharedPipelinesVersion = env.SHARED_JENKINS_PIPELINES_VERSION ?: 'feat/provision-maven-settings'
 def runIntegrationTests = env.BRANCH_NAME != 'main'
 
 library "shared-jenkins-pipelines@${sharedPipelinesVersion}"

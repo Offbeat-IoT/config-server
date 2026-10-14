@@ -1,4 +1,4 @@
-@Library("shared-jenkins-pipelines@fix/configure-cloudsmith-maven-repository") _
+@Library("shared-jenkins-pipelines@main") _
 springBootDockerCiPipeline(
     runIntegrationTests: false,
     useStackDeploymentForProduction: true,

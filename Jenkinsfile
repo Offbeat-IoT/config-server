@@ -1,7 +1,4 @@
-// TODO: revert this ref to `main` once the multi-arch change
-// (shared-jenkins-pipelines PR #132) is merged. Pinning a feature branch breaks
-// the build when that branch is deleted.
-@Library("shared-jenkins-pipelines@feat/multiarch-spring-image-stage") _
+@Library("shared-jenkins-pipelines@main") _
 springBootDockerCiPipeline(
     runIntegrationTests: false,
     useStackDeploymentForProduction: true,

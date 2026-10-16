@@ -2,5 +2,7 @@
 springBootDockerCiPipeline(
     runIntegrationTests: false,
     useStackDeploymentForProduction: true,
-    productionStackName: 'configuration-core'
+    productionStackName: 'configuration-core',
+    productionTargetSwarm: 'production1',
+    productionBuildNode: 'production'
 )

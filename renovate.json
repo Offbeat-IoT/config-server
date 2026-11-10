@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":dependencyDashboard"],
+  "timezone": "Europe/Copenhagen",
+  "schedule": ["before 8am on monday"],
+  "prHourlyLimit": 1,
+  "prConcurrentLimit": 3,
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "description": "Offbeat parents are published to the private Cloudsmith Maven repository",
+      "matchDatasources": ["maven"],
+      "matchPackageNames": ["com.offbeat-iot:spring-boot-parent"],
+      "registryUrls": ["https://maven.cloudsmith.io/infrastructure/artifact-repo/"]
+    },
+    {
+      "description": "A parent bump pulls in a new Spring Boot; review it on its own",
+      "matchDatasources": ["maven"],
+      "matchPackageNames": ["com.offbeat-iot:spring-boot-parent"],
+      "addLabels": ["parent-bump"]
+    },
+    {
+      "description": "Major upgrades need a human decision",
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
+    }
+  ]
+}
